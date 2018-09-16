@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>ピカピカ</title>
+	<style >
+		*{margin: 0; padding: 0;}
+		body {background: black;}
+		section {width: 100%; height:100vh; }
+		section img { width:1000px; position:absolute; left:50%; top:50%;
+				 transform:translateX(-50%) translateY(-50%);
+				 cursor:pointer;}
+		#one {z-index:1;}
+		
+				 
+	</style>
+	<script>
+		var i = 0;
+		function p() {
+			i +=1;
+			if(i%2==0){
+				one.style.opacity = 1;
+				two.style.opacity = 0;
+				pikachu.currentTime = 0;
+				pikachu.pause();
+				document.querySelector("body").style.background = "black";
+			}else if(i%2==1){
+				one.style.opacity = 0;
+				two.style.opacity = 1;
+				pikachu.play();
+				document.querySelector("body").style.background = "white";}	 
+		}
+	</script>
+</head>
+<body>
+	<audio id="pikachu" src="pikachu.mp3" autoplay loop preload="auto"> </audio>
+	<section>
+		<img id="one" src="1.png" onclick="p()" style="opacity: 1;">
+		<img id="two" src="2.gif" style="opacity: 0;">	
+	</section>
+</body>
+</html>
